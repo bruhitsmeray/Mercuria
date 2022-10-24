@@ -33,6 +33,7 @@ sysinfo.txt
 ###
 # OS generated
 ###
+.idea/
 .DS_Store
 .DS_Store?
 ._*
