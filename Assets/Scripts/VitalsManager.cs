@@ -20,12 +20,9 @@ public class VitalsManager : MonoBehaviour
     }
     
     private void Update() {
-        if (!_isDead) {
-            Debug.Log(health + "/" + maxHealth);
-        }
-
         if (Input.GetKeyDown(KeyCode.R)) {
             TakeDamage(10);
+            Debug.Log(health + "/" + maxHealth);
         }
     }
     
