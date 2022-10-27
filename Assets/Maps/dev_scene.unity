@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 212316318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8252afdc33187774ab8e617591f9e6fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ac08cb9eea0a496999f191c0c46d28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 380139423}
@@ -415,11 +415,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 809130332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7456e6a57232449a70aa9b7c5153f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0fca942c3f4444f8986c7cc9fe220e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthUI: {fileID: 0}
-  maxHealth: 100
+  walkSpeed: 0
+  runSpeed: 0
+  groundDrag: 0
+  orientation: {fileID: 0}
+  height: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1419521126
 GameObject:
   m_ObjectHideFlags: 0
