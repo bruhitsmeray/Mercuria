@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public Transform orientation;
+    private Transform _orientation;
     
-    private float _xRotation = .0f;
-    private float _yRotation = 0.0f;
+    private float _xRotation;
+    private float _yRotation;
 
     [Header("Sensitivity")]
     [Tooltip("This box will be taken into account only if the 'useUnifiedSensitivity' is checked.")]
@@ -18,7 +18,7 @@ public class CameraManager : MonoBehaviour
     public bool useUnifiedSensitivity = true;
 
     private void Start() {
-        //orientation = GetComponent<Transform>().Find("Orientation");
+        _orientation = GameObject.Find("Orientation").transform.GetComponent<Transform>();
         SetCursor(true);
     }
 
@@ -35,15 +35,15 @@ public class CameraManager : MonoBehaviour
     }
 
     public void Look() {
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.smoothDeltaTime * horizontalSensitivity;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.smoothDeltaTime * verticalSensitivity;
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.fixedDeltaTime * horizontalSensitivity;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.fixedDeltaTime * verticalSensitivity;
         
         _xRotation -= mouseY;
         _yRotation += mouseX;
         _xRotation = Mathf.Clamp(_xRotation, -90.0f, 90.0f);
 
         transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, _yRotation, 0);
+        _orientation.rotation = Quaternion.Euler(0, _yRotation, 0);
     }
 
     public void SetCursor(bool isHidden) {
